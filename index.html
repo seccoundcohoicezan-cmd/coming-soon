@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Coming Soon · Roadtrip YCS 2026</title>
-  <meta name="description" content="Roadtrip YCS 2026 segera berangkat. Tunggu infonya! Hadiah 8 unit HP + Mercedes.">
+  <meta name="description" content="Roadtrip YCS 2026 segera berangkat. Tunggu infonya! Hadiah 8 unit HP + berbagai merchandise menarik.">
   <meta name="theme-color" content="#00A9FD">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Coming Soon · Roadtrip YCS 2026">
-  <meta property="og:description" content="Busnya sudah jalan. Tunggu infonya! Hadiah 8 unit HP + Mercedes.">
+  <meta property="og:description" content="Busnya sudah jalan. Tunggu infonya! Hadiah 8 unit HP + berbagai merchandise menarik.">
   <meta property="og:image" content="assets/img/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/img/ikon.png">
@@ -227,71 +227,11 @@
       z-index: 4;
       right: max(3%, calc(50% - 44rem));
       top: -6%;
-      width: clamp(10.5rem, 27cqw, 21rem);
-      rotate: 8deg;
+      width: clamp(11rem, 30cqw, 26rem);
+      height: auto;
+      rotate: 5deg;
       animation: tempel .55s cubic-bezier(.3, 1.6, .5, 1) 2.6s both, goyang-stiker 4s ease-in-out 3.2s infinite;
       filter: drop-shadow(0 .5rem .6rem rgb(0 30 70 / .35));
-    }
-    .stiker__isi {
-      position: relative;
-      padding: 1em .9em 1.1em;
-      border-radius: 1.4em;
-      background:
-        radial-gradient(circle at 20% 15%, rgb(255 255 255 / .35), transparent 40%),
-        linear-gradient(160deg, #FFE066 0%, var(--kuning) 45%, #FFB627 100%);
-      color: var(--tinta);
-      text-align: center;
-      font-family: "Baloo 2", system-ui, sans-serif;
-      font-size: clamp(.72rem, 1.9cqw, 1.4rem);
-      line-height: 1;
-      /* tepi putih tebal khas stiker die-cut */
-      box-shadow: 0 0 0 .38em var(--putih), 0 0 0 .46em rgb(16 35 58 / .12);
-      overflow: hidden;
-    }
-    /* sudut terkelupas */
-    .stiker__isi::after {
-      content: "";
-      position: absolute; right: 0; bottom: 0;
-      width: 2.2em; height: 2.2em;
-      background: linear-gradient(135deg, transparent 50%, #F3F5F8 50%, #D9DEE6 100%);
-      border-top-left-radius: .6em;
-      box-shadow: -.15em -.15em .3em rgb(0 0 0 / .18);
-    }
-    .stiker__label {
-      display: inline-block;
-      padding: .3em .8em .2em;
-      border-radius: 99px;
-      background: var(--merah);
-      color: var(--putih);
-      font-weight: 800;
-      font-size: 1.05em;
-      letter-spacing: .1em;
-      rotate: -3deg;
-    }
-    .stiker__baris {
-      display: flex; align-items: center; justify-content: center; gap: .3em;
-      margin-top: .35em;
-      font-weight: 800;
-    }
-    .stiker__baris svg { flex: none; width: 2.1em; height: 2.1em; }
-    .stiker__angka { font-size: 2.6em; letter-spacing: -.02em; }
-    .stiker__teks { font-size: 1.5em; text-align: left; line-height: .95; }
-    .stiker__plus {
-      display: block; margin: .05em 0 -.1em;
-      font-weight: 800; font-size: 2em; color: var(--merah);
-    }
-    .stiker__mobil { font-size: 2.15em; letter-spacing: -.01em; }
-    .stiker__menarik {
-      display: inline-block;
-      margin-top: .4em;
-      padding: .25em .7em .15em;
-      border-radius: .4em;
-      background: var(--tinta);
-      color: var(--kuning);
-      font-weight: 800;
-      font-size: 1.15em;
-      letter-spacing: .12em;
-      rotate: 2deg;
     }
     @keyframes tempel {
       0% { transform: scale(2.2) rotate(-14deg); opacity: 0; }
@@ -300,8 +240,7 @@
     }
     @keyframes goyang-stiker { 50% { transform: rotate(-2deg) scale(1.03); } }
     @media (max-width: 47.99rem) {
-      .stiker { right: 3%; top: 3%; width: clamp(9.5rem, 40cqw, 12rem); rotate: 9deg; }
-      .stiker__isi { font-size: clamp(.62rem, 2.9cqw, .8rem); }
+      .stiker { right: 2%; top: -2%; width: min(60cqw, 15.5rem); rotate: 5deg; }
     }
 
     /* ---------- jalur bawah (aspal) ---------- */
@@ -367,22 +306,7 @@
           </div>
           <p class="gelembung">Tunggu infonya!</p>
         </div>
-        <div class="stiker" role="img" aria-label="Hadiah: 8 unit HP plus Mercedes. Menarik!">
-          <div class="stiker__isi">
-            <span class="stiker__label">HADIAH</span>
-            <div class="stiker__baris">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="3" width="24" height="42" rx="5" fill="#10233A"/><rect x="15" y="9" width="18" height="28" rx="2" fill="#5CCBFF"/><circle cx="24" cy="41" r="1.8" fill="#FFD23F"/></svg>
-              <span class="stiker__angka">8</span>
-              <span class="stiker__teks">UNIT<br>HP</span>
-            </div>
-            <span class="stiker__plus" aria-hidden="true">+</span>
-            <div class="stiker__baris">
-              <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 31v-5.5c0-1.4.9-2.6 2.2-3l5.3-1.6 4.6-6.1c.8-1 2-1.6 3.2-1.6h9.5c1.3 0 2.5.6 3.2 1.7l3.6 5.4 3.4.9c1.7.5 3 2 3 3.8V31c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2Z" fill="#10233A"/><path d="M17 20.5 20.6 16c.4-.5.9-.7 1.5-.7h3.9v5.2H17Zm11.5 0v-5.2h2.8c.6 0 1.1.3 1.5.8l3 4.4h-7.3Z" fill="#5CCBFF"/><circle cx="14.5" cy="33" r="4.5" fill="#E8231F"/><circle cx="14.5" cy="33" r="1.8" fill="#fff"/><circle cx="34.5" cy="33" r="4.5" fill="#E8231F"/><circle cx="34.5" cy="33" r="1.8" fill="#fff"/></svg>
-              <span class="stiker__mobil">MERCEDES</span>
-            </div>
-            <span class="stiker__menarik">MENARIK!</span>
-          </div>
-        </div>
+        <img class="stiker" src="assets/img/stiker-hadiah-840.webp" srcset="assets/img/stiker-hadiah-420.webp 420w, assets/img/stiker-hadiah-840.webp 840w" sizes="(min-width: 48rem) 26rem, 60vw" width="1958" height="1908" alt="Hadiah: 8 unit HP + berbagai merchandise menarik!" decoding="async">
       </div>
     </section>
 
