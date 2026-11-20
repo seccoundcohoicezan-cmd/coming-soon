@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Coming Soon · Roadtrip YCS 2026</title>
+  <meta name="description" content="Roadtrip YCS 2026 segera berangkat. Tunggu infonya! Hadiah 8 unit HP + Mercedes.">
+  <meta name="theme-color" content="#00A9FD">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coming Soon · Roadtrip YCS 2026">
+  <meta property="og:description" content="Busnya sudah jalan. Tunggu infonya! Hadiah 8 unit HP + Mercedes.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/ikon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/bus-1200.webp" imagesrcset="assets/img/bus-640.webp 640w, assets/img/bus-1200.webp 1200w" imagesizes="(min-width: 60rem) 32vw, 80vw">
+  <style>
+    :root {
+      --langit: #00A9FD;
+      --langit-muda: #5CCBFF;
+      --aspal: #3A4F6A;
+      --aspal-gelap: #26354A;
+      --kuning: #FFD23F;
+      --merah: #E8231F;
+      --putih: #FFFFFF;
+      --tinta: #10233A;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--putih);
+      background: var(--aspal-gelap);
+      min-height: 100svh;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      background: linear-gradient(180deg, #0796E6 0%, var(--langit) 38%);
+      overflow: hidden;
+    }
+    .kepala {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: clamp(1.5rem, 5vh, 3.5rem) 1.25rem 0;
+    }
+    .lencana {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .45rem 1rem;
+      border-radius: 99px;
+      background: rgb(255 255 255 / .18);
+      box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / .55);
+      font-weight: 700;
+      font-size: clamp(.8rem, 2.6vw, .95rem);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .lencana i {
+      width: .55rem; height: .55rem; border-radius: 50%;
+      background: var(--kuning);
+      box-shadow: 0 0 0 0 rgb(255 210 63 / .8);
+      animation: denyut 1.6s ease-out infinite;
+    }
+    @keyframes denyut { to { box-shadow: 0 0 0 .7rem rgb(255 210 63 / 0); } }
+    h1 {
+      margin: .6rem 0 0;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      line-height: .9;
+      font-size: clamp(3.2rem, 13vw, 8.5rem);
+      letter-spacing: -.01em;
+      text-shadow: 0 .06em 0 #0670B5, 0 .12em .3em rgb(0 40 90 / .35);
+    }
+    h1 .titik span { display: inline-block; animation: lompat 1.4s ease-in-out infinite; }
+    h1 .titik span:nth-child(2) { animation-delay: .15s; }
+    h1 .titik span:nth-child(3) { animation-delay: .3s; }
+    @keyframes lompat { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-.18em); } }
+    .sub {
+      margin: .7rem 0 0;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.35rem, 4.6vw, 2.4rem);
+      line-height: 1.1;
+      color: var(--kuning);
+      text-shadow: 0 .08em 0 rgb(0 60 120 / .45);
+    }
+    .ajakan {
+      margin: .5rem auto 0;
+      max-width: 34rem;
+      font-size: clamp(.95rem, 2.8vw, 1.1rem);
+      line-height: 1.5;
+      color: rgb(255 255 255 / .92);
+    }
+
+    /* ---------- adegan jalan ---------- */
+    .adegan {
+      position: relative;
+      margin-top: auto;
+      flex: none;
+      height: clamp(20rem, 100svh - 16.5rem, 36rem);
+      container-type: size;
+    }
+    @media (min-width: 48rem) {
+      .adegan { height: max(min(52svh, 100vw / 2.873), 100vw / 2.873); }
+    }
+    .panggung {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 100%;
+      aspect-ratio: 1600 / 557;
+      transform: translateX(-50%);
+      min-width: 100%;
+    }
+    .panggung > img {
+      width: 100%; height: 100%; object-fit: cover;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+      mask-image: linear-gradient(180deg, transparent 0, #000 22%);
+    }
+    .awan {
+      position: absolute; left: 0; right: 0; top: 4%; height: 22%;
+      background: url("assets/img/awan.svg") 0 0 / auto 100% repeat-x;
+      opacity: .6;
+      animation: geser 70s linear infinite;
+    }
+    @keyframes geser { to { background-position-x: -1400px; } }
+    .marka {
+      position: absolute; left: 0; right: 0; top: 85.4%; height: 2.6%;
+      overflow: hidden;
+      background: rgb(80 99 127);
+    }
+    .marka span {
+      position: absolute; top: 18%; bottom: 18%; left: 0; width: 200%;
+      background: linear-gradient(90deg, #F2F6F9 0 50%, transparent 50% 100%) 0 0 / 7.07% 100% repeat-x;
+      animation: marka .7s linear infinite;
+    }
+    @keyframes marka { to { transform: translateX(-7.07%); } }
+
+    .bus {
+      position: absolute;
+      z-index: 2;
+      bottom: 2%;
+      left: 50%;
+      height: min(64cqh, 94cqw / 1.5);
+      aspect-ratio: 1536 / 1024;
+      translate: -50% 0;
+      animation: masuk 2.4s var(--ease) both;
+    }
+    @media (min-width: 48rem) {
+      .bus { left: 6%; translate: 0 0; height: min(70cqh, 46cqw / 1.5); }
+    }
+    @keyframes masuk {
+      from { transform: translateX(-120vw); }
+      to { transform: translateX(0); }
+    }
+    .bus__badan {
+      position: absolute; inset: 0;
+      animation: goyang .38s ease-in-out infinite alternate;
+    }
+    .bus__badan img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; }
+    .bus__tangan { transform-origin: 15.6% 51.8%; animation: dadah .5s ease-in-out infinite alternate; }
+    @keyframes goyang {
+      from { transform: translateY(0) rotate(0deg); }
+      to { transform: translateY(-1.2%) rotate(-.4deg); }
+    }
+    @keyframes dadah { from { transform: rotate(-6deg); } to { transform: rotate(14deg); } }
+    .bayang {
+      position: absolute; left: 6%; right: 6%; bottom: -1.5%; height: 7%;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, rgb(0 0 0 / .4), transparent);
+    }
+    .debu { position: absolute; left: -2%; bottom: 4%; width: 1px; height: 1px; }
+    .debu i {
+      position: absolute; left: 0; bottom: 0;
+      width: clamp(1rem, 3vw, 2.2rem); aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgb(235 240 246 / .75);
+      animation: debu 1.1s ease-out infinite;
+      opacity: 0;
+    }
+    .debu i:nth-child(2) { animation-delay: .35s; }
+    .debu i:nth-child(3) { animation-delay: .7s; }
+    @keyframes debu {
+      0% { transform: translate(0, 0) scale(.4); opacity: .8; }
+      100% { transform: translate(-260%, -120%) scale(1.5); opacity: 0; }
+    }
+    .gelembung {
+      position: absolute;
+      z-index: 3;
+      left: 34%;
+      top: -12%;
+      padding: .55rem .9rem;
+      border-radius: 1rem;
+      background: var(--putih);
+      color: var(--tinta);
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(.85rem, 2.4vw, 1.25rem);
+      line-height: 1.1;
+      white-space: nowrap;
+      box-shadow: 0 .4rem 1rem rgb(0 40 90 / .25);
+      transform-origin: 0 100%;
+      animation: muncul .5s var(--ease) 2.3s both, apung 2.6s ease-in-out 2.8s infinite;
+    }
+    .gelembung::after {
+      content: ""; position: absolute; left: .9rem; bottom: -.5rem;
+      border: .55rem solid transparent; border-bottom: 0; border-top-color: var(--putih);
+    }
+    @keyframes muncul { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes apung { 50% { translate: 0 -.3rem; } }
+
+    /* ---------- hadiah (aspal) ---------- */
+    .hadiah {
+      position: relative;
+      padding: clamp(2rem, 6vw, 3.5rem) 1.25rem clamp(2.5rem, 7vw, 4rem);
+      background: linear-gradient(180deg, var(--aspal) 0%, var(--aspal-gelap) 100%);
+      text-align: center;
+    }
+    .hadiah h2 {
+      margin: 0;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      line-height: 1;
+    }
+    .hadiah h2 small {
+      display: block;
+      margin-bottom: .35rem;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      font-size: .42em;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--kuning);
+    }
+    .kartu-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(.75rem, 3vw, 1.5rem);
+      margin: 1.6rem auto 0;
+      max-width: 46rem;
+    }
+    .kartu {
+      flex: 1 1 13rem;
+      max-width: 19rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      border-radius: 1.25rem;
+      background: rgb(255 255 255 / .07);
+      box-shadow: inset 0 0 0 1.5px rgb(255 255 255 / .16);
+      text-align: left;
+    }
+    .kartu svg { flex: none; width: 3.25rem; height: 3.25rem; }
+    .kartu b {
+      display: block;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 4.6vw, 2rem);
+      line-height: 1;
+      color: var(--kuning);
+    }
+    .kartu span { font-size: .95rem; color: rgb(255 255 255 / .85); }
+    .plus {
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 2.4rem;
+      line-height: 1;
+      color: var(--kuning);
+    }
+    @media (max-width: 30rem) { .plus { flex-basis: 100%; margin: -.4rem 0; } .kartu { max-width: none; } }
+    .tombol {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      margin-top: 2rem;
+      padding: .9rem 1.5rem;
+      border-radius: 99px;
+      background: #25D366;
+      color: #06331A;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 .35rem 0 #128C4A;
+      transition: transform .15s var(--ease), box-shadow .15s var(--ease);
+    }
+    .tombol:hover { transform: translateY(-2px); box-shadow: 0 .5rem 0 #128C4A; }
+    .tombol:active { transform: translateY(3px); box-shadow: 0 .1rem 0 #128C4A; }
+    .tombol:focus-visible { outline: 3px solid var(--kuning); outline-offset: 3px; }
+    .tombol svg { width: 1.3rem; height: 1.3rem; }
+    footer {
+      padding: 1.25rem;
+      background: var(--aspal-gelap);
+      text-align: center;
+      font-size: .8rem;
+      color: rgb(255 255 255 / .55);
+      border-top: 1px solid rgb(255 255 255 / .08);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <header class="kepala">
+        <span class="lencana"><i aria-hidden="true"></i>Roadtrip YCS 2026</span>
+        <h1>Coming Soon<span class="titik" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></h1>
+        <p class="sub">Tunggu infonya, ya!</p>
+        <p class="ajakan">Busnya sudah jalan menuju Bali. Info lengkapnya segera kami umumkan.</p>
+      </header>
+
+      <div class="adegan" aria-hidden="true">
+        <div class="panggung">
+          <img src="assets/img/jalan-bali-1600.webp" srcset="assets/img/jalan-bali-800.webp 800w, assets/img/jalan-bali-1600.webp 1600w" sizes="(min-width: 50rem) 100vw, 140vh" alt="" width="1600" height="557" fetchpriority="high">
+          <div class="awan"></div>
+          <div class="marka"><span></span></div>
+        </div>
+        <div class="bus">
+          <div class="debu"><i></i><i></i><i></i></div>
+          <div class="bus__badan">
+            <div class="bayang"></div>
+            <img src="assets/img/bus-1200.webp" srcset="assets/img/bus-640.webp 640w, assets/img/bus-1200.webp 1200w" sizes="(min-width: 60rem) 32vw, 80vw" alt="" width="1536" height="1024">
+            <img class="bus__tangan" src="assets/img/tangan-1200.webp" srcset="assets/img/tangan-640.webp 640w, assets/img/tangan-1200.webp 1200w" sizes="(min-width: 60rem) 32vw, 80vw" alt="" width="1536" height="1024">
+          </div>
+          <p class="gelembung">Tunggu infonya!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hadiah" aria-labelledby="judul-hadiah">
+      <h2 id="judul-hadiah"><small>Hadiah menarik</small>Siap dibawa pulang</h2>
+      <div class="kartu-wrap">
+        <div class="kartu">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="3" width="24" height="42" rx="5" fill="#FFD23F"/><rect x="15" y="9" width="18" height="28" rx="2" fill="#26354A"/><circle cx="24" cy="41" r="1.8" fill="#26354A"/><rect x="20" y="5.5" width="8" height="1.6" rx=".8" fill="#26354A"/></svg>
+          <div><b>8 Unit HP</b><span>untuk peserta beruntung</span></div>
+        </div>
+        <span class="plus" aria-hidden="true">+</span>
+        <div class="kartu">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 31v-5.5c0-1.4.9-2.6 2.2-3l5.3-1.6 4.6-6.1c.8-1 2-1.6 3.2-1.6h9.5c1.3 0 2.5.6 3.2 1.7l3.6 5.4 3.4.9c1.7.5 3 2 3 3.8V31c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2Z" fill="#FFD23F"/><path d="M17 20.5 20.6 16c.4-.5.9-.7 1.5-.7h3.9v5.2H17Zm11.5 0v-5.2h2.8c.6 0 1.1.3 1.5.8l3 4.4h-7.3Z" fill="#26354A"/><circle cx="14.5" cy="33" r="4.5" fill="#26354A"/><circle cx="14.5" cy="33" r="1.8" fill="#FFD23F"/><circle cx="34.5" cy="33" r="4.5" fill="#26354A"/><circle cx="34.5" cy="33" r="1.8" fill="#FFD23F"/></svg>
+          <div><b>Mercedes</b><span>hadiah utama</span></div>
+        </div>
+      </div>
+      <a class="tombol" href="https://whatsapp.com/channel/0029Vb5vVIaId7nEqecJ1I1G" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg>
+        Ikuti Saluran WhatsApp YCS
+      </a>
+    </section>
+  </main>
+  <footer>© 2026 Roadtrip YCS · Youth Character Summit</footer>
+</body>
+</html>
