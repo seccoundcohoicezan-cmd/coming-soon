@@ -79,7 +79,8 @@
       font-family: "Baloo 2", system-ui, sans-serif;
       font-weight: 800;
       line-height: .9;
-      font-size: clamp(3.2rem, 13vw, 8.5rem);
+      font-size: clamp(2.3rem, 11.5vw, 8.5rem);
+      white-space: nowrap;
       letter-spacing: -.01em;
       text-shadow: 0 .06em 0 #0670B5, 0 .12em .3em rgb(0 40 90 / .35);
     }
@@ -225,6 +226,11 @@
     .stiker {
       position: absolute;
       z-index: 4;
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: zoom-in;
+      -webkit-tap-highlight-color: transparent;
       right: max(3%, calc(50% - 44rem));
       top: -6%;
       width: clamp(11rem, 30cqw, 26rem);
@@ -233,6 +239,8 @@
       animation: tempel .55s cubic-bezier(.3, 1.6, .5, 1) 2.6s both, goyang-stiker 4s ease-in-out 3.2s infinite;
       filter: drop-shadow(0 .5rem .6rem rgb(0 30 70 / .35));
     }
+    .stiker img { display: block; width: 100%; height: auto; }
+    .stiker:focus-visible { outline: 3px solid var(--kuning); outline-offset: 6px; border-radius: 1.5rem; }
     @keyframes tempel {
       0% { transform: scale(2.2) rotate(-14deg); opacity: 0; }
       60% { opacity: 1; }
@@ -240,8 +248,31 @@
     }
     @keyframes goyang-stiker { 50% { transform: rotate(-2deg) scale(1.03); } }
     @media (max-width: 47.99rem) {
-      .stiker { right: 2%; top: -2%; width: min(60cqw, 15.5rem); rotate: 5deg; }
+      /* HP: stiker kecil di pojok langit, tidak menimpa judul maupun wajah sopir */
+      .stiker { right: 3%; top: 4%; width: min(33cqw, 9rem); rotate: 6deg; filter: drop-shadow(0 .3rem .35rem rgb(0 30 70 / .35)); }
+      .gelembung { left: 26%; top: -10%; }
+      .debu { display: none; }
     }
+
+    /* ---------- perbesar stiker ---------- */
+    .lihat {
+      width: min(92vw, 34rem);
+      max-height: 92svh;
+      padding: 0;
+      border: 0;
+      background: none;
+      overflow: visible;
+    }
+    .lihat::backdrop { background: rgb(8 24 44 / .78); backdrop-filter: blur(2px); }
+    .lihat[open] { animation: muncul .3s var(--ease); }
+    .lihat img { width: 100%; height: auto; max-height: 82svh; object-fit: contain; filter: drop-shadow(0 1rem 2rem rgb(0 0 0 / .4)); }
+    .lihat form { display: flex; justify-content: center; margin-top: .75rem; }
+    .lihat button {
+      min-width: 8rem; padding: .7rem 1.4rem; border: 0; border-radius: 99px;
+      background: var(--putih); color: var(--tinta);
+      font: 700 1rem "Plus Jakarta Sans", system-ui, sans-serif; cursor: pointer;
+    }
+    .lihat button:focus-visible { outline: 3px solid var(--kuning); outline-offset: 3px; }
 
     /* ---------- jalur bawah (aspal) ---------- */
     .bawah {
@@ -291,22 +322,24 @@
         <p class="ajakan">Busnya sudah jalan menuju Bali. Info lengkapnya segera kami umumkan.</p>
       </header>
 
-      <div class="adegan" aria-hidden="true">
-        <div class="panggung">
+      <div class="adegan">
+        <div class="panggung" aria-hidden="true">
           <img src="assets/img/jalan-bali-1600.webp" srcset="assets/img/jalan-bali-800.webp 800w, assets/img/jalan-bali-1600.webp 1600w" sizes="(min-width: 50rem) 100vw, 140vh" alt="" width="1600" height="557" fetchpriority="high">
           <div class="awan"></div>
           <div class="marka"><span></span></div>
         </div>
-        <div class="bus">
+        <div class="bus" aria-hidden="true">
           <div class="debu"><i></i><i></i><i></i></div>
           <div class="bus__badan">
             <div class="bayang"></div>
             <img src="assets/img/bus-1200.webp" srcset="assets/img/bus-640.webp 640w, assets/img/bus-1200.webp 1200w" sizes="(min-width: 60rem) 32vw, 80vw" alt="" width="1536" height="1024">
             <img class="bus__tangan" src="assets/img/tangan-1200.webp" srcset="assets/img/tangan-640.webp 640w, assets/img/tangan-1200.webp 1200w" sizes="(min-width: 60rem) 32vw, 80vw" alt="" width="1536" height="1024">
           </div>
-          <p class="gelembung">Tunggu infonya!</p>
+          <p class="gelembung">Sampai jumpa di Bali!</p>
         </div>
-        <img class="stiker" src="assets/img/stiker-hadiah-840.webp" srcset="assets/img/stiker-hadiah-420.webp 420w, assets/img/stiker-hadiah-840.webp 840w" sizes="(min-width: 48rem) 26rem, 60vw" width="1958" height="1908" alt="Hadiah: 8 unit HP + berbagai merchandise menarik!" decoding="async">
+        <button class="stiker" type="button" id="stiker" aria-haspopup="dialog" aria-label="Lihat hadiah: 8 unit HP + berbagai merchandise menarik">
+          <img src="assets/img/stiker-hadiah-840.webp" srcset="assets/img/stiker-hadiah-420.webp 420w, assets/img/stiker-hadiah-840.webp 840w" sizes="(min-width: 48rem) 26rem, 36vw" width="1958" height="1908" alt="" decoding="async">
+        </button>
       </div>
     </section>
 
@@ -319,5 +352,14 @@
     </section>
   </main>
   <footer>© 2026 Roadtrip YCS · Youth Character Summit</footer>
+  <dialog class="lihat" id="lihat" aria-label="Hadiah">
+    <img src="assets/img/stiker-hadiah-840.webp" width="1958" height="1908" alt="Hadiah: 8 unit HP + berbagai merchandise menarik!" loading="lazy">
+    <form method="dialog"><button type="submit">Tutup</button></form>
+  </dialog>
+  <script>
+    const dlg = document.getElementById('lihat');
+    document.getElementById('stiker').addEventListener('click', () => dlg.showModal ? dlg.showModal() : dlg.setAttribute('open', ''));
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  </script>
 </body>
 </html>
